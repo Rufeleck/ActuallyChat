@@ -13,5 +13,5 @@ public interface Responder
      */
     void readConfigFile( String relativePath );
 
-    void respond( String inputSentence );
+    String respond( String inputSentence );
 }

@@ -30,10 +30,9 @@ public final class MyResponder implements Responder
     }
 
     @Override
-    public void respond( final String inputSentence )
+    public String respond( final String inputSentence )
     {
-    	String[] split = inputSentence.split( "\\s+" );
-    	boolean respond = false;
+    	String[] split = inputSentence.toLowerCase().split( "\\s+" );
 
         search: for( Keyword keyword : keywords )
         {
@@ -49,9 +48,7 @@ public final class MyResponder implements Responder
         				|| ( keyword.getSentenceMatch().equals( Keyword.MatchType.ENDS_WITH ) && inputSentence.endsWith( k ) )
         				|| ( keyword.getSentenceMatch().equals(Keyword.MatchType.CONTAINS ) && inputSentence.contains( k ) ) )
         			{
-    					respond = true;
-    					pickResponse( inputSentence, keyword.getResponses() );
-    					break search;
+    					return pickResponse( inputSentence, keyword.getResponses() );
         			}
         		}
         		
@@ -63,11 +60,25 @@ public final class MyResponder implements Responder
         		{
         			String word = split[ i ].trim();
         			if( i > 0 && keyword.getSentenceMatch().equals( Keyword.MatchType.STARTS_WITH )
-        					|| i < split.length - 1 && keyword.getSentenceMatch().equals( Keyword.MatchType.ENDS_WITH )
         					|| split.length > 1 && keyword.getSentenceMatch().equals( Keyword.MatchType.EXACT ) )
         			{
         				continue search;
         			}
+        			
+        			boolean cont = false;
+        			
+        			if (keyword.getSentenceMatch().equals( Keyword.MatchType.ENDS_WITH )){
+        				cont = true;
+        				
+	        			for( String key : keyword.getKeywords() )
+	        			{
+	        				if(key.contains(split[split.length - 1]))
+	        					cont = false;
+	        			}
+        			}
+        			
+        			if (cont == true)
+        				continue search;
         			
         			for( String k : keyword.getKeywords() )
         			{
@@ -76,25 +87,20 @@ public final class MyResponder implements Responder
         						|| keyword.getWordMatch().equals( Keyword.MatchType.ENDS_WITH ) && word.endsWith( k )
         						|| keyword.getWordMatch().equals( Keyword.MatchType.CONTAINS ) && word.contains( k ) )
         				{
-        					respond = true;
-        					pickResponse(inputSentence, keyword.getResponses() );
-        					break search;
+        					return pickResponse(inputSentence, keyword.getResponses() );
         				}
         			}
         		}
         	}
         }
         
-    	if( ! respond )
-    	{
-        	pickGenericResponse();
-    	}
+        return	pickGenericResponse();
+    	
     }
     
-    private void pickResponse( final String inputSentence, final List<Response> responses )
+    private String pickResponse( final String inputSentence, final List<Response> responses )
     {
     	boolean question = inputSentence.contains( "?" ) || startsWith( inputSentence, "do", "how", "is", "were", "can", "when", "who", "what", "where", "why" );
-    	boolean respond = false;
     	
     	search: for( Response response : responses )
     	{
@@ -108,26 +114,21 @@ public final class MyResponder implements Responder
     		{
     			if( inputSentence.contains( keyword ) || keyword.equals( "" ) )
     			{		
-    				respond = true;	
-    				print( randomFromArray( response.getResponses() ) );
-    				break search;
+    				return randomFromArray( response.getResponses() ) ;
     			}
     		}
     	}
-    	if( ! respond )
-    	{
-    		pickGenericResponse();
-    	}    	
+   		return pickGenericResponse();
     }
     
-    private void pickGenericResponse()
+    private String pickGenericResponse()
     {
-    	print( randomFromArray(
+    	return randomFromArray(
     			"whatever",
     			"hmm... not sure",
     			"I don't really know about that.",
     			"Can we talk about something else?",
     			"A team of highly trained monkeys has been dispatched to your location."
-    		) );
+    		) ;
     }
 }

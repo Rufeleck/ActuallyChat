@@ -4,7 +4,7 @@ package main.java.chat;
 /**
  * 
  * @author alex
- *
+ *Modified By Samuel Miller
  */
 public class Main
 {

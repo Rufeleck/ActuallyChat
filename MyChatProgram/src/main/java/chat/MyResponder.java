@@ -12,14 +12,17 @@ import main.java.chat.util.ConfigReader;
 /**
  * 
  * @author alex
- *
+ *Modified By Samuel Miller
  */
 public final class MyResponder implements Responder
 {
     private static List<Keyword> keywords;
+    private int offTopic;
+    private final int GameInit = 8;
 
     public MyResponder()
     {
+    	offTopic = 0;
     }
 
     @Override
@@ -114,6 +117,7 @@ public final class MyResponder implements Responder
     		{
     			if( inputSentence.contains( keyword ) || keyword.equals( "" ) )
     			{		
+    				offTopic = 0;
     				return randomFromArray( response.getResponses() ) ;
     			}
     		}
@@ -123,12 +127,16 @@ public final class MyResponder implements Responder
     
     private String pickGenericResponse()
     {
-    	return randomFromArray(
-    			"whatever",
-    			"hmm... not sure",
-    			"I don't really know about that.",
-    			"Can we talk about something else?",
-    			"A team of highly trained monkeys has been dispatched to your location."
-    		) ;
+    	offTopic++;
+    	if(offTopic < GameInit)
+	    	return randomFromArray(
+	    			"whatever",
+	    			"hmm... not sure",
+	    			"I don't really know about that.",
+	    			"Can we talk about something else?",
+	    			"A team of highly trained monkeys has been dispatched to your location."
+	    		) ;
+    	offTopic = 0;
+    	return null;
     }
 }

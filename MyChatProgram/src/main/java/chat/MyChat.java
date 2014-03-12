@@ -16,7 +16,7 @@ import main.java.chat.component.ChatBox;
 /**
  * 
  * @author alex
- *
+ * Modified By Samuel Miller
  */
 public final class MyChat implements Chat
 {
@@ -60,7 +60,7 @@ public final class MyChat implements Chat
 
 		JFrame frame = new JFrame("ChatBox");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ChatBox ctBx = new ChatBox(responder);
+        ChatBox ctBx = new ChatBox();
         ResponderAction act = new ResponderAction(responder, ctBx);
         ctBx.replaceActionListener(act);
         frame.add(ctBx);

@@ -3,7 +3,7 @@ package main.java.chat.component;
 /**
  * 
  * @author alex
- *
+ *Modified By Samuel Miller
  */
 public class Response
 {

@@ -7,6 +7,12 @@ import javax.swing.*;
 
 import main.java.chat.Responder;
 
+
+/*
+*@author Samuel Miller
+*
+*/
+
 public class ChatBox extends JPanel  implements ActionListener {
     /**
 	 * 
@@ -16,11 +22,9 @@ public class ChatBox extends JPanel  implements ActionListener {
     private JTextArea display;
     private JScrollPane scrolling;
     private JButton enterButton;
-    private Responder respond;
     
-	public ChatBox(Responder r) {
+	public ChatBox() {
 		super(new GridBagLayout());
-		respond = r;
 		
 		userInputField = new JTextField(100);
 		userInputField.addActionListener(this);
@@ -50,9 +54,8 @@ public class ChatBox extends JPanel  implements ActionListener {
 		
 	}
 	
-	public ChatBox(Responder r, ActionListener l){
+	public ChatBox(ActionListener l){
 		super(new GridBagLayout());
-		respond = r;
 		
 		userInputField = new JTextField(100);
 		userInputField.addActionListener(l);
@@ -114,14 +117,14 @@ public class ChatBox extends JPanel  implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		String text = userInputField.getText();
-//        display.append(text + "\n");
-//        display.selectAll();
-//        userInputField.setText("");
-        display.append("USER: " + userInputField.getText() + "\n");
-		display.append("CHATTER: " + respond.respond(userInputField.getText()) + "\n");
-		this.clearUserInput();
-        display.setCaretPosition(display.getDocument().getLength());
+		String text = userInputField.getText();
+        display.append(text + "\n");
+        display.selectAll();
+        userInputField.setText("");
+//        display.append("USER: " + userInputField.getText() + "\n");
+//		display.append("CHATTER: " + respond.respond(userInputField.getText()) + "\n");
+//		this.clearUserInput();
+//        display.setCaretPosition(display.getDocument().getLength());
 	}
 
 }

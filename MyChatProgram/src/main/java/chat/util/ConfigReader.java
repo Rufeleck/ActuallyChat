@@ -15,7 +15,7 @@ import main.java.chat.component.Response;
 /**
  * 
  * @author alex
- *
+ *Modified By Samuel Miller
  */
 public final class ConfigReader {
 

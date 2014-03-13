@@ -1,13 +1,13 @@
-package main.java.wordGames.synonym.listeners;
+package main.java.wordGames.madLibs.listeners;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-//computer responds to player's word
-public class ComputerListener implements ActionListener {
+//Player responds to computer's madLib
+public class PlayerListener implements ActionListener {
 
-	public ComputerListener() {
+	public PlayerListener() {
 		// TODO Auto-generated constructor stub
 	}
 

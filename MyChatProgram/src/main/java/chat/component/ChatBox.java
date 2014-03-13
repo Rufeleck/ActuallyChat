@@ -5,15 +5,13 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-import main.java.chat.Responder;
-
 
 /*
 *@author Samuel Miller
 *
 */
 
-public class ChatBox extends JPanel  implements ActionListener {
+public class ChatBox extends JPanel  implements ActionListener, ChatGUI {
     /**
 	 * 
 	 */
@@ -26,10 +24,10 @@ public class ChatBox extends JPanel  implements ActionListener {
 	public ChatBox() {
 		super(new GridBagLayout());
 		
-		userInputField = new JTextField(100);
+		userInputField = new JTextField(50);
 		userInputField.addActionListener(this);
 		
-		display = new JTextArea("",30,100);
+		display = new JTextArea("",30,50);
 		display.setEditable(false);
 		display.setLineWrap(true);
 		scrolling = new JScrollPane(display);
@@ -81,11 +79,13 @@ public class ChatBox extends JPanel  implements ActionListener {
 		
 	}
 	
+	@Override
 	public void writeToDisplay(String str){
         display.append(str + "\n");
         display.selectAll();
 	}
 	
+	@Override
 	public String writeUserInputToDisplay(){
 		String str = userInputField.getText();
         display.append(userInputField.getText() + "\n");
@@ -93,18 +93,22 @@ public class ChatBox extends JPanel  implements ActionListener {
 		
 	}
 	
+	@Override
 	public void clearDisplay(){
 		display.setText("");
 	}
 	
+	@Override
 	public String getUserInput(){
 		return userInputField.getText();
 	}
 	
+	@Override
 	public void clearUserInput(){
         userInputField.setText("");
 	}
 	
+	@Override
 	public void replaceActionListener(ActionListener l){
 		for(ActionListener al : userInputField.getActionListeners())
 			userInputField.removeActionListener(al);

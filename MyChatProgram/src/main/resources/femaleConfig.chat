@@ -40,7 +40,7 @@ place#word#contains#contains#13#[R]my\\no-preference\\It's too far, do you have 
 smile#word#contains#contains#12#[R]\\no-preference\\how sweet.\\1
 kiss#word#contains#contains#11#[R]\\no-preference\\Too soon baby.\\2[R]\\no-preference\\Hold your horses, this isn't the time.\\1
 drive|car#word#contains#contains#10#[R]\\no-preference\\I heard from a friend that you drive like a maniac. I'm not getting in.\\1
-name|call#word#contains#contains#9#[R]you\\yes\\My name is Linda, Linda Miles. It's nice to meet you, what's your name?\\2[R]my|i'm\\no-preference\\That's a sweet name, hope we have fun today.\\1
+name|call#word#contains#contains#9#[R]you\\yes\\My name is Jesse, Jesse Warren. It's nice to meet you, what's your name?\\2[R]my|i'm\\no-preference\\That's a sweet name, hope we have fun today.\\1
 movie#word#contains#contains#8#[R]like|favorite\\yes\\Yeah I like movie a lot, I watch a lot and the one of my favorite is Mamma Mia. \\4[R]my|i like\\no-preference\\Haven't watched that yet, it will be great if we can watch it somewhere.\\3[R]my|i like\\no-preference\\Oh yeah I've watched that, I liked it too.\\2[R]my|i like\\no-preference\\Oh yeah I've watched that, I kinda didn't like it that much to be honest, no my taste.\\1
 book#word#contains#contains#7#[R]like|favorite\\yes\\I don't really read, but I remember liking the Twilight trilogy a lot, which I got from a friend.\\2[R]my|i\\no-preference\\Don't know that, sorry I'm not much of a reading person.\\1
 hobby#word#contains#contains#6#[R]your\\yes\\My hobby is drawing, I like drawing the environment and lately I'm into going into the woods and just draw what I see around me. It's very relaxing, you should try it some time.\\2[R]my\\no-preference\\How nice.\\1

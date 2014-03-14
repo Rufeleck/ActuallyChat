@@ -14,7 +14,6 @@ public class MyPOS {
 	private String[] tags=null;
 	private String[] sent=null;
 	private double[] probs;
-	public enum Word_Type {Verb, Adjective};
 
 	public MyPOS(String user) {
 		init(user);
@@ -47,10 +46,9 @@ public class MyPOS {
 		POSTaggerME tagger = new POSTaggerME(model);
 		
 
-		String delimsPuctuation = "[ |,.?/;:{}\\-\\!\\)\\(]";
-		String[] split = user.split(delimsPuctuation);
-		
-		
+		String delimsPuctuation = "[|,.?/;:{}\\-\\!\\)\\(]";
+		String[] split = user.split(" ");
+		sent = split;
 		
 //		sent = new String[] { "Most", "large", "cities", "in",
 //				"the", "US", "had", "morning", "and", "afternoon",
@@ -62,9 +60,9 @@ public class MyPOS {
 	}//init
 	
 	
-	public String translateSimpleTag(String incomingTag){
+	public static String translateSimpleTag(String incomingTag){
 		//result String
-		String result=null;
+		String result="";
 		//ensure upperCase
 		incomingTag=incomingTag.toUpperCase();
 		
@@ -103,7 +101,7 @@ public class MyPOS {
 	}//translateTag
 	
 	//Switch Statement Made By Barrett Sharpe
-	public String translateTag(String incomingTag){
+	public static String translateTag(String incomingTag){
 		//result String
 		String result=null;
 		//ensure upperCase

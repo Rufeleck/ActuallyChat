@@ -39,7 +39,7 @@ public final class MyChat implements Chat
         			"What gender should the person you're talking to be?",
         			"StartUp", JOptionPane.YES_NO_OPTION,
         			JOptionPane.QUESTION_MESSAGE, null, options, null);
-        	System.out.print(n);
+        	//System.out.print(n);
         responder = responderIn;
         if (n == 0)
         	responder.readConfigFile( "..\\..\\..\\resources\\maleConfig.chat" );

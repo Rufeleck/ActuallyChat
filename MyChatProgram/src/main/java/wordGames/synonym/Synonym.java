@@ -10,6 +10,11 @@ import main.java.wordGames.Game;
 import main.java.wordGames.synonym.listeners.PlayerListener;
 import edu.smu.tspell.wordnet.*;
 
+/**
+*@author Samuel Miller
+*
+*/
+
 public class Synonym implements Game, ActionListener {
 	
 	private ChatGUI ctBx;

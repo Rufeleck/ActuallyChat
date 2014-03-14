@@ -8,6 +8,10 @@ import javax.swing.JFrame;
 import main.java.chat.component.ChatBox;
 import main.java.wordGames.synonym.Synonym;
 
+/**
+*@author Samuel Miller
+*
+*/
 public class MyGameSpace implements GameSpace, ActionListener {
 	
 	ChatBox ctBx;

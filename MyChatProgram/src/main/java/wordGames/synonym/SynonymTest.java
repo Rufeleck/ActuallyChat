@@ -8,6 +8,11 @@ import javax.swing.JFrame;
 import main.java.chat.ResponderAction;
 import main.java.chat.component.ChatBox;
 
+/**
+*@author Samuel Miller
+*
+*/
+
 @SuppressWarnings("unused")
 public class SynonymTest {
 

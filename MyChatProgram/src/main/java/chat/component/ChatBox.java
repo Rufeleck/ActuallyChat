@@ -6,7 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 
-/*
+/**
 *@author Samuel Miller
 *
 */

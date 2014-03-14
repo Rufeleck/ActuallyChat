@@ -4,6 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
+/**
+*@author Samuel Miller
+*
+*/
+
 //Player responds to computer's word
 public class PlayerListener implements ActionListener {
 

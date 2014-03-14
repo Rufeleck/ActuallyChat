@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 import main.java.chat.util.MyPOS;
 
+/**
+*@author Samuel Miller
+*
+*/
+
 public class TagSet {
 	
 	ArrayList<String> verbs;

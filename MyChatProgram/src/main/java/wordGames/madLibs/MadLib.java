@@ -10,6 +10,11 @@ import main.java.wordGames.Game;
 import main.java.wordGames.GameSpace;
 import main.java.wordGames.synonym.listeners.PlayerListener;
 
+/**
+*@author Samuel Miller
+*
+*/
+
 public class MadLib implements Game {
 	
 	private ChatGUI chat;

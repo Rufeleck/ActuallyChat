@@ -1,5 +1,10 @@
 package main.java.wordGames.madLibs.listeners;
 
+/**
+*@author Samuel Miller
+*
+*/
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

@@ -6,7 +6,10 @@ import java.io.InputStream;
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTaggerME;
 import opennlp.tools.util.Sequence;
-
+/**
+*@author Samuel Miller
+*
+*/
 public class MyPOS {
 
 	// instances

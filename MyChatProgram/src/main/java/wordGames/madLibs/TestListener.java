@@ -5,6 +5,11 @@ import java.awt.event.ActionListener;
 
 import main.java.chat.component.ChatBox;
 
+/**
+*@author Samuel Miller
+*
+*/
+
 public class TestListener implements ActionListener {
 	
 	private ChatBox chat;

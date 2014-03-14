@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import main.java.chat.component.ChatBox;
 
-/*
+/**
 *@author Samuel Miller
 *
 */

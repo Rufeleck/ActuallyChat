@@ -27,10 +27,10 @@ public class ChatBox extends JPanel  implements ActionListener, ChatGUI {
 	public ChatBox() {
 		super(new GridBagLayout());
 		
-		userInputField = new JTextField(50);
+		userInputField = new JTextField(100);
 		userInputField.addActionListener(this);
 		
-		display = new JTextArea("",30,50);
+		display = new JTextArea("",30,100);
 		display.setEditable(false);
 		display.setLineWrap(true);
 		scrolling = new JScrollPane(display);

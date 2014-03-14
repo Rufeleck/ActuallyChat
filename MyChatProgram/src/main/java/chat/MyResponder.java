@@ -18,7 +18,7 @@ public final class MyResponder implements Responder
 {
     private static List<Keyword> keywords;
     private int offTopic;
-    private final int GameInit = 8;
+    private final int GameInit = 3;
 
     public MyResponder()
     {

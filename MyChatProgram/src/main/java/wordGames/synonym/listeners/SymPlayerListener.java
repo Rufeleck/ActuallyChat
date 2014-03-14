@@ -18,23 +18,24 @@ import main.java.wordGames.synonym.Synonym;
 
 //Player responds to computer's word
 public class SymPlayerListener implements ActionListener {
-	ChatBox chat;
-	Synonym syn;
-	boolean first;
-	String word;
-	Responder respond;
+	private ChatBox chat;
+	private Synonym syn;
+	private boolean first;
+	private String word;
+	private Responder respond;
 
 	public SymPlayerListener(Synonym s, ChatBox c, Responder r) {
 		respond = r;
 		chat = c;
 		syn = s;
 		first = true;
-		chat.writeToDisplay("Okay then. So I'll give you a word, and you try to name as many"
+		chat.writeToDisplay("STRANGER: Okay then. So I'll give you a word, and you try to name as many"
 				+ " synonyms to the word as you possibly can, sound good?");
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		chat.writeToDisplay("USER: " + chat.getUserInput());
 		if(!first){
 		    ArrayList<String> analysis = Synonym.analyzeSynonymResponse(word, chat.getUserInput());
 		    chat.clearUserInput();
@@ -42,18 +43,18 @@ public class SymPlayerListener implements ActionListener {
 	    	if(analysis.size() > 1){
 			    for(String s : analysis)
 			    	str += s + " ";
-			    chat.writeToDisplay("I'm not very good at this, but I think " + str + "are synonyms,"
+			    chat.writeToDisplay("STRANGER: I'm not very good at this, but I think " + str + "are synonyms,"
 			    		+" but I'm not sure about the rest");
 	    	}
 	    	else
-	    		chat.writeToDisplay("I guess we're both pretty bad at this :)");
+	    		chat.writeToDisplay("STRANGER: I guess we're both pretty bad at this :)");
 	        ResponderAction act = new ResponderAction(respond, chat);
 	        chat.replaceActionListener(act);
 		}
 		else{
 		    chat.clearUserInput();
 			word = Synonym.generateWord("src\\main\\resources\\dictionary.txt");
-			chat.writeToDisplay("Okay, how about \"" + word + "\"");
+			chat.writeToDisplay("STRANGER: Okay, how about \"" + word + "\"");
 			first = false;
 		}
 		

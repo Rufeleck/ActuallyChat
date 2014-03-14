@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import main.java.chat.util.*;
 import main.java.chat.component.ChatBox;
+import main.java.wordGames.madLibs.MadLib;
+import main.java.wordGames.madLibs.listeners.MadPlayerListener;
 import main.java.wordGames.synonym.Synonym;
 import main.java.wordGames.synonym.listeners.SymPlayerListener;
 
@@ -27,6 +29,7 @@ public class ResponderAction implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		chat.writeToDisplay("USER: " + chat.getUserInput());
+			
 		if (!game){
 			String response = respond.respond(chat.getUserInput());
 			if (response != null){
@@ -49,6 +52,11 @@ public class ResponderAction implements ActionListener{
 					Synonym syn = new Synonym(chat);
 					chat.replaceActionListener(new SymPlayerListener(syn, chat, respond));
 				}
+				else{
+					MadLib mad = new MadLib(chat);
+					chat.replaceActionListener(new MadPlayerListener(mad, chat, respond));
+				}
+					
 			}
 			else{
 				chat.writeToDisplay("STRANGER: " + "Nevermind then");

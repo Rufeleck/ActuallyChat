@@ -8,7 +8,6 @@ import edu.smu.tspell.wordnet.WordNetDatabase;
 import main.java.chat.component.ChatGUI;
 import main.java.wordGames.Game;
 import main.java.wordGames.GameSpace;
-import main.java.wordGames.synonym.listeners.PlayerListener;
 
 /**
 *@author Samuel Miller

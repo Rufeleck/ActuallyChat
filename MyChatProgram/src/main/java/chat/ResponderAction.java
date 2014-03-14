@@ -3,7 +3,10 @@ package main.java.chat;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import main.java.chat.util.*;
 import main.java.chat.component.ChatBox;
+import main.java.wordGames.synonym.Synonym;
+import main.java.wordGames.synonym.listeners.SymPlayerListener;
 
 /**
 *@author Samuel Miller
@@ -39,7 +42,13 @@ public class ResponderAction implements ActionListener{
 		else{
 			if(chat.getUserInput().toLowerCase().equals("yes") || chat.getUserInput().toLowerCase().equals("y") 
 					|| chat.getUserInput().toLowerCase().equals("sure")){
-				
+				chat.clearUserInput();
+				String[] array = {"synonym", "madlibs"};
+		    	int rand = (int) Math.floor( Math.random() * array.length );
+				if(array[rand].equals("synonym")){
+					Synonym syn = new Synonym(chat);
+					chat.replaceActionListener(new SymPlayerListener(syn, chat, respond));
+				}
 			}
 			else{
 				chat.writeToDisplay("STRANGER: " + "Nevermind then");

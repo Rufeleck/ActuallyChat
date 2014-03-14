@@ -9,10 +9,10 @@ import java.awt.event.ActionListener;
 *
 */
 
-//Player responds to computer's word
-public class PlayerListener implements ActionListener {
+//computer responds to player's word
+public class SymComputerListener implements ActionListener {
 
-	public PlayerListener() {
+	public SymComputerListener() {
 		// TODO Auto-generated constructor stub
 	}
 

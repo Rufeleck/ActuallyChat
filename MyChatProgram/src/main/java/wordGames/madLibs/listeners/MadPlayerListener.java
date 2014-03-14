@@ -10,9 +10,9 @@ import java.awt.event.ActionListener;
 */
 
 //Player responds to computer's madLib
-public class PlayerListener implements ActionListener {
+public class MadPlayerListener implements ActionListener {
 
-	public PlayerListener() {
+	public MadPlayerListener() {
 		// TODO Auto-generated constructor stub
 	}
 

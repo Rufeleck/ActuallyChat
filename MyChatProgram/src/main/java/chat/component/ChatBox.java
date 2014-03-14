@@ -5,6 +5,9 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
+import main.java.chat.MyResponder;
+import main.java.chat.Responder;
+
 
 /**
 *@author Samuel Miller
@@ -52,7 +55,7 @@ public class ChatBox extends JPanel  implements ActionListener, ChatGUI {
 		
 	}
 	
-	public ChatBox(ActionListener l){
+	public ChatBox( ActionListener l){
 		super(new GridBagLayout());
 		
 		userInputField = new JTextField(100);

@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 import main.java.chat.component.ChatGUI;
 import main.java.wordGames.Game;
-import main.java.wordGames.synonym.listeners.PlayerListener;
+import main.java.wordGames.synonym.listeners.SymPlayerListener;
 import edu.smu.tspell.wordnet.*;
 
 /**
@@ -15,7 +15,7 @@ import edu.smu.tspell.wordnet.*;
 *
 */
 
-public class Synonym implements Game, ActionListener {
+public class Synonym implements Game {
 	
 	private ChatGUI ctBx;
 	private static WordNetDatabase database;
@@ -112,13 +112,12 @@ public class Synonym implements Game, ActionListener {
 	public void initialize() {
 		System.setProperty("wordnet.database.dir", "lib\\WordNet\\2.1\\dict");
 		database = WordNetDatabase.getFileInstance();
-		ctBx.replaceActionListener(new PlayerListener());
 		
 	}
 
 	@Override
 	public void run() {
-		
+		//ctBx.replaceActionListener(new SymPlayerListener());
 
 	}
 	
@@ -128,11 +127,6 @@ public class Synonym implements Game, ActionListener {
 		
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 
 }

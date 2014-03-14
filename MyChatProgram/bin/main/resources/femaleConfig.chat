@@ -1,0 +1,8 @@
+hello|hi|hey|howdy|greetings#word#contains#exact#7#[R]alex\\no-preference\\hey hey|what's up?\\2[R]\\no\\oh hay there|hey|hi|sup|hey, sup?\\1
+how are you|how r u|how are u#phrase#contains#contains#6#[R]today\\yes\\fine today, you?|so far so good\\2[R]\\no-preference\\I am good, you?|Could be better|time will tell lol\\1
+good#word#contains#exact#5#[R]\\no\\that's good|lol nice|awesome\\1
+like#word#contains#contains#4#[R]movies\\yes\\I don't like movies|I only like action movies\\3[R]video games\\yes\\I don't play video games\\2[R]games\\yes\\board games?\\1
+yes#word#exact#contains#3#[R]\\no-preference\\yes|no|not sure|maybe\\1
+why not#phrase#starts-with#contains#2#[R]\\no-preference\\I guess because I'm too poor|not sure|just because|well, you know\\1
+don't#word#contains#contains#1#[R]\\no-preference\\no?|why not?\\1
+derp#word#ends-with#contains#1#[R]\\no-preference\\herp\\1

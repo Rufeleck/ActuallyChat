@@ -40,10 +40,13 @@ public class SymPlayerListener implements ActionListener {
 		    ArrayList<String> analysis = Synonym.analyzeSynonymResponse(word, chat.getUserInput());
 		    chat.clearUserInput();
 	    	String str = "";
-	    	if(analysis.size() > 1){
-			    for(String s : analysis)
-			    	str += s + " ";
-			    chat.writeToDisplay("STRANGER: I'm not very good at this, but I think " + str + "are synonyms,"
+	    	if(analysis.size() > 0){
+//			    for(String s : analysis)
+//			    	str += s + ", ";
+			    for(int i = 0; i < analysis.size() - 1; i++)
+			    	str += analysis.get(i) + ", ";
+			    str += "and " + analysis.get(analysis.size() - 1);
+			    chat.writeToDisplay("STRANGER: I'm not very good at this, but I think " + str + " are synonyms,"
 			    		+" but I'm not sure about the rest");
 	    	}
 	    	else
@@ -54,7 +57,8 @@ public class SymPlayerListener implements ActionListener {
 		else{
 		    chat.clearUserInput();
 			word = Synonym.generateWord("src\\main\\resources\\dictionary.txt");
-			chat.writeToDisplay("STRANGER: Okay, how about \"" + word + "\"");
+			chat.writeToDisplay("STRANGER: Okay, how about \"" + word + "\"");for(String s :Synonym.analyzeSynonym(word))
+				System.out.println(s);
 			first = false;
 		}
 		

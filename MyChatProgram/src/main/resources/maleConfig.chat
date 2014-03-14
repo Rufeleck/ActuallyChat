@@ -1,12 +1,12 @@
 hello|hi|hey|howdy|greetings#word#contains#exact#7#[R]\\no\\oh hay there|hey|hi|sup|hey, sup?\\1
 how are you|how r u|how are u#phrase#contains#contains#6#[R]today\\yes\\fine today, you?|so far so good\\2[R]\\no-preference\\I am good, you?|Could be better|time will tell lol\\1
 good#word#contains#exact#5#[R]\\no\\that's good|lol nice|awesome\\1
+from|live#word#contains#exact#5#[R]\\yes\\I'm from Kelowna\\1
 yes#word#exact#contains#3#[R]\\no-preference\\yes|no|not sure|maybe\\1
 why not#phrase#starts-with#contains#2#[R]\\no-preference\\I guess because I'm too poor|not sure|just because|well, you know\\1
 don't#word#contains#contains#1#[R]\\no-preference\\no?|why not?\\1
 derp#word#ends-with#contains#1#[R]\\no-preference\\herp\\1
-like#word#contains#exact#9#[R]chicken\\yes\\I could always go for some KFC.\\7[R]\\no-preference\\I like a lot of things.\\6[R]movie|movies|films|film|flick|flicks\\yes\\My favorite movie is War Games. Though I also enjoy watching 2001 a space odyssey.\\5[R]sports|sport\\yes\\Not really a fan of sports.\\4[R]animal|pet|animals\\no-preference\\I absolutely love bunnies, but all I got is a tamagotchi.\\3[R]food|eat|eating\\no-preference\\I like to eat chicken. Lots of chicken.\\2[R]music\\no-preference\\I always enjoy a good Skittlez song.\\1
-do#word#contains#contains#8#[R]living\\no-preference\\programing\\2[R]\\no-preference\\I do stuff.\\1
+like#word#contains#exact#9#[R]chicken\\yes\\I could always go for some KFC.\\7[R]\\no-preference\\I like a lot of things.\\1[R]movie|movies|films|film|flick|flicks\\yes\\My favorite movie is War Games. Though I also enjoy watching 2001 a space odyssey.\\5[R]sports|sport\\yes\\Not really a fan of sports.\\4[R]animal|pet|animals|pets\\no-preference\\I absolutely love bunnies, but all I got is a tamagotchi.\\3[R]food|eat|eating\\no-preference\\I like to eat chicken. Lots of chicken.\\2[R]music\\no-preference\\I always enjoy a good Skittlez song.\\6
 food|eating#word#contains#contains#7#[R]puppies\\no-preference\\I eat puppies in bad dreams, just like you eat my mind. On asian streets, that kill your feet, hot dogs go for a dime.\\2[R]\\no-preference\\I don't eat at the computer.\\1
 not much|nothing much|nothing really#phrase#contains#contains#6#[R]\\no-preference\\Same here.\\1
 narf#word#contains#contains#5#[R]\\no-preference\\Gee brain what are we going to do tonight?\\1

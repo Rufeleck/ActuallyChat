@@ -1,12 +1,8 @@
 package main.java.wordGames.synonym;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-import main.java.chat.component.ChatGUI;
-import main.java.wordGames.synonym.listeners.SymPlayerListener;
 import edu.smu.tspell.wordnet.*;
 
 /**

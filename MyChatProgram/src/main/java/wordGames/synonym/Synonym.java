@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 import main.java.chat.component.ChatGUI;
-import main.java.wordGames.Game;
 import main.java.wordGames.synonym.listeners.SymPlayerListener;
 import edu.smu.tspell.wordnet.*;
 
@@ -15,9 +14,8 @@ import edu.smu.tspell.wordnet.*;
 *
 */
 
-public class Synonym implements Game {
+public class Synonym{
 	
-	private ChatGUI ctBx;
 	private static WordNetDatabase database;
 
 	//computer gives user a word to find synonyms of (takes in a path to a dictionary file)
@@ -103,30 +101,14 @@ public class Synonym implements Game {
 		return match;
 	}
 
-	public Synonym(ChatGUI c) {
-		ctBx = c;
-		initialize();
-	}
-
-	@Override
-	public void initialize() {
+	//Initializes the game to be used
+	public static void initialize() {
 		System.setProperty("wordnet.database.dir", "lib\\WordNet\\2.1\\dict");
 		database = WordNetDatabase.getFileInstance();
 		
 	}
-
-	@Override
-	public void run() {
-		//ctBx.replaceActionListener(new SymPlayerListener());
-
-	}
 	
-	@Override
-	public void closeGame(){
-		// TODO Auto-generated method stub		
-		
-	}
-
+	private Synonym(){}
 	
 
 }

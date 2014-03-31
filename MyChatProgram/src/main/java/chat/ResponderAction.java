@@ -49,11 +49,10 @@ public class ResponderAction implements ActionListener{
 				String[] array = {"synonym", "madlibs"};
 		    	int rand = (int) Math.floor( Math.random() * array.length );
 				if(array[rand].equals("synonym")){
-					Synonym syn = new Synonym(chat);
-					chat.replaceActionListener(new SymPlayerListener(syn, chat, respond));
+					chat.replaceActionListener(new SymPlayerListener(chat, respond));
 				}
 				else{
-					MadLib mad = new MadLib(chat);
+					MadLib mad = new MadLib();
 					chat.replaceActionListener(new MadPlayerListener(mad, chat, respond));
 				}
 					

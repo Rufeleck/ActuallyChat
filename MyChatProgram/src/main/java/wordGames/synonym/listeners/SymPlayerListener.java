@@ -19,15 +19,13 @@ import main.java.wordGames.synonym.Synonym;
 //Player responds to computer's word
 public class SymPlayerListener implements ActionListener {
 	private ChatBox chat;
-	private Synonym syn;
 	private boolean first;
 	private String word;
 	private Responder respond;
 
-	public SymPlayerListener(Synonym s, ChatBox c, Responder r) {
+	public SymPlayerListener(ChatBox c, Responder r) {
 		respond = r;
 		chat = c;
-		syn = s;
 		first = true;
 		chat.writeToDisplay("STRANGER: Okay then. So I'll give you a word, and you try to name as many"
 				+ " synonyms to the word as you possibly can, sound good?");

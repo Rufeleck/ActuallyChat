@@ -1,5 +1,7 @@
 package main.java.chat;
 
+import main.java.wordGames.synonym.Synonym;
+
 
 /**
  * 
@@ -12,7 +14,7 @@ public class Main
     {
         Chat chat = new MyChat();
         chat.initialize( new MyResponder() );
-
+        Synonym.initialize();
         chat.chat();
     }
 }

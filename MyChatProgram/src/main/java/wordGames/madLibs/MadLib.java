@@ -6,17 +6,14 @@ import java.util.ArrayList;
 
 import edu.smu.tspell.wordnet.WordNetDatabase;
 import main.java.chat.component.ChatGUI;
-import main.java.wordGames.Game;
-import main.java.wordGames.GameSpace;
 
 /**
 *@author Samuel Miller
 *
 */
 
-public class MadLib implements Game {
+public class MadLib {
 	
-	private ChatGUI chat;
 	//verb, adverb, pronoun, noun, adjective, past verb
 	private int[] needed;
 	private int madLibID;
@@ -24,8 +21,7 @@ public class MadLib implements Game {
 	
 	private final int[] zoo =  {1,2,0,3,4,2};
 
-	public MadLib(ChatGUI c) {
-		chat = c;
+	public MadLib() {
 		initialize();
 	}
 	
@@ -89,7 +85,7 @@ public class MadLib implements Game {
 		return check;
 	}
 
-	@Override
+	
 	public void initialize() {
 		madLibID = pickRandomMadLibID();
 		switch(madLibID){
@@ -103,15 +99,4 @@ public class MadLib implements Game {
 		return needed;
 	}
 	
-	@Override
-	public void closeGame() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		
-	}
 }

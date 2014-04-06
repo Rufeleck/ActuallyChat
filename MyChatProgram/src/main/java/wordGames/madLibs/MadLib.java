@@ -1,12 +1,5 @@
 package main.java.wordGames.madLibs;
 
-import static main.java.chat.util.Util.randomFromArray;
-
-import java.util.ArrayList;
-
-import edu.smu.tspell.wordnet.WordNetDatabase;
-import main.java.chat.component.ChatGUI;
-
 /**
 *@author Samuel Miller
 *

@@ -19,11 +19,15 @@ public class MyPOS {
 	private double[] probs;
 
 	public MyPOS(String user) {
-		init(user);
+		init(user,"lib/en-pos-maxent.bin");
+	}
+	
+	public MyPOS(String user, String POSModelPath) {
+		init(user,POSModelPath);
 	}
 
 	//init from online
-	public void init(String user) {
+	public void init(String user, String POSModelPath) {
 
 		//instantiate POS
 		POSModel model = null;
@@ -32,7 +36,7 @@ public class MyPOS {
 		InputStream modelIn = null;
 		try {
 			modelIn = new FileInputStream(
-					"lib/en-pos-maxent.bin");
+					POSModelPath);//"lib/en-pos-maxent.bin"
 			model = new POSModel(modelIn); 
 		} catch (IOException e) {
 			// Model loading failed, handle the error

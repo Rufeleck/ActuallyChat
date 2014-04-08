@@ -1,15 +1,9 @@
 package main.java.chat;
 
-import static main.java.chat.util.Util.*;
-
 import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
-import main.java.chat.component.ChatBox;
-
-import javax.swing.JFrame;
 
 import main.java.chat.component.ChatBox;
 

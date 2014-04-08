@@ -2,9 +2,11 @@ package main.java.chat;
 
 import static main.java.chat.util.Util.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import main.java.api.yahoo.YahooAPI;
 import main.java.chat.component.Keyword;
 import main.java.chat.component.Response;
 import main.java.chat.util.ConfigReader;
@@ -97,13 +99,17 @@ public final class MyResponder implements Responder
         	}
         }
         
-        return	pickGenericResponse();
+        return	pickGenericResponse(inputSentence);
     	
+    }
+    
+    private boolean isQuestion(String inputSentence){
+    	return inputSentence.contains( "?" ) || startsWith( inputSentence, "do", "how", "is", "were", "can", "when", "who", "what", "where", "why" );
     }
     
     private String pickResponse( final String inputSentence, final List<Response> responses )
     {
-    	boolean question = inputSentence.contains( "?" ) || startsWith( inputSentence, "do", "how", "is", "were", "can", "when", "who", "what", "where", "why" );
+    	boolean question = isQuestion(inputSentence);
     	
     	search: for( Response response : responses )
     	{
@@ -122,12 +128,20 @@ public final class MyResponder implements Responder
     			}
     		}
     	}
-   		return pickGenericResponse();
+   		return pickGenericResponse(inputSentence);
     }
     
-    private String pickGenericResponse()
+    private String pickGenericResponse(String input)
     {
     	offTopic++;
+    	if(isQuestion(input)){
+    		try {
+				return YahooAPI.answerMeThis(input);
+			} catch (IOException e) {
+				e.printStackTrace();
+				return "ERROR 404: ANSWER NOT FOUND";
+			}
+    	}
     	if(offTopic < GameInit)
 	    	return randomFromArray(
 	    			"whatever",
@@ -137,6 +151,6 @@ public final class MyResponder implements Responder
 	    			"A team of highly trained monkeys has been dispatched to your location."
 	    		) ;
     	offTopic = 0;
-    	return null;
+    	return "game";
     }
 }

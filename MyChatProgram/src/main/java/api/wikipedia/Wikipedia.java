@@ -87,7 +87,6 @@ public class Wikipedia {
 			while((inputStr = streamReader.readLine()) != null){
 				input += inputStr;
 			}
-			
 			JSONObject json = new JSONObject(input);
 			JSONObject query = json.getJSONObject("query");
 			JSONObject pages = query.getJSONObject("pages");
@@ -101,10 +100,13 @@ public class Wikipedia {
 //		    			break;
 //		    	} catch (JSONException e) {}
 //		    }
-			
+			try{
 			s = nestedObject.getString("extract");
-			if(s == null)
+			}
+			catch(Exception e){
 				return "Nothing here but us chickens.";
+			}
+			
 			return s;
 	}
 }

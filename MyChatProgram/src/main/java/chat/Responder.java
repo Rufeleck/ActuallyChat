@@ -14,4 +14,5 @@ public interface Responder
     void readConfigFile( String relativePath );
 
     String respond( String inputSentence );
+    String getGeneric();
 }

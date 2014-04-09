@@ -134,6 +134,7 @@ public final class MyResponder implements Responder
     private String pickGenericResponse(String input)
     {
     	offTopic++;
+    	
     	if(isQuestion(input)){
     		try {
 				return YahooAPI.answerMeThis(input);
@@ -142,15 +143,21 @@ public final class MyResponder implements Responder
 				return "ERROR 404: ANSWER NOT FOUND";
 			}
     	}
-    	if(offTopic < GameInit)
-	    	return randomFromArray(
-	    			"whatever",
-	    			"hmm... not sure",
-	    			"I don't really know about that.",
-	    			"Can we talk about something else?",
-	    			"A team of highly trained monkeys has been dispatched to your location."
-	    		) ;
+    	if(offTopic < GameInit){
+    			return "wiki";
+    	}
     	offTopic = 0;
     	return "game";
     }
+    
+
+	@Override
+	public String getGeneric() {return randomFromArray(
+			"whatever",
+			"hmm... not sure",
+			"I don't really know about that.",
+			"Can we talk about something else?",
+			"A team of highly trained monkeys has been dispatched to your location."
+		) ;
+	}
 }

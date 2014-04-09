@@ -53,7 +53,7 @@ public class MyPOS {
 		POSTaggerME tagger = new POSTaggerME(model);
 		
 
-		String delimsPuctuation = "[|,.?/;:{}\\-\\!\\)\\(]";
+		//String delimsPuctuation = "[|,.?/;:{}\\-\\!\\)\\(]";
 		String[] split = user.split(" ");
 		sent = split;
 		

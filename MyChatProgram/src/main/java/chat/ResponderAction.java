@@ -2,9 +2,13 @@ package main.java.chat;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
+import main.java.FindTheSynonym;
 import main.java.GrammarGauntlet;
+import main.java.api.wikipedia.WikiListener;
 import main.java.chat.component.ChatBox;
+import main.java.wordGames.barrettsGames.findTheSynonym.WheresWaldoListener;
 import main.java.wordGames.barrettsGames.grammer.GrammerListener;
 import main.java.wordGames.madLibs.MadLib;
 import main.java.wordGames.madLibs.listeners.MadPlayerListener;
@@ -33,10 +37,10 @@ public class ResponderAction implements ActionListener{
 		if (!game){
 			String response = respond.respond(chat.getUserInput());
 			if (response.equals("wiki")){
-				//TODO wiki handler
+				chat.replaceActionListener(new WikiListener(chat, respond));
 			}
 			else if(response.equals("game")){
-				chat.writeToDisplay("Jigsaw: " + "Would you like to play a game?");
+				chat.writeToDisplay("JIGSAW: " + "Would you like to play a game?");
 				chat.clearUserInput();
 				game = true;
 			}
@@ -64,6 +68,13 @@ public class ResponderAction implements ActionListener{
 		    			chat.replaceActionListener(new GrammerListener(grammer, chat, respond));
 		    			break;
 		    		case"where's waldo":
+		    			FindTheSynonym waldo = null;
+					try {
+						waldo = new FindTheSynonym("src\\main\\resources\\dictionary.txt", "lib\\WordNet\\2.1\\dict");
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					chat.replaceActionListener(new WheresWaldoListener(waldo, chat, respond));
 		    			break;
 		    	}
 			}

@@ -26,7 +26,10 @@ public class WheresWaldoListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		chat.writeToDisplay("USER: " + chat.getUserInput());
-		chat.writeToDisplay("STRANGER: " + waldo.evaluateResponse(chat.getUserInput()));
+		if(waldo.evaluateResponse(chat.getUserInput()))
+			chat.writeToDisplay("STRANGER: " + "You are correct!!");
+		else
+			chat.writeToDisplay("STRANGER: " + "Unfortunatly you are incorrect :<");
 		chat.clearUserInput();
         ResponderAction act = new ResponderAction(respond, chat);
         chat.replaceActionListener(act);

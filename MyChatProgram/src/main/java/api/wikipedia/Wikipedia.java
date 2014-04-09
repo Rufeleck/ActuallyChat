@@ -68,7 +68,7 @@ public class Wikipedia {
 
 	
 	//get the intro for the specified page
-	public static String getIntro(String page) throws IOException{
+	public static String getIntro(String page)throws IOException{
 		
 		String s = null;
 			

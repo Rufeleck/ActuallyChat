@@ -37,7 +37,7 @@ public class YahooAPI {
 				e = x;
 			} 
 		} while (!(e == null));// do/while
-
+		
 		JSONObject query = result.getJSONObject("query");
 		JSONObject results = query.getJSONObject("results");
 		JSONArray question = results.getJSONArray("Question");
